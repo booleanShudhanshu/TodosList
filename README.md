@@ -1,4 +1,5 @@
 # TodosList
 Todos List helps one to organize one's work in systematic way
 
-![Screenshot (136)](https://user-images.githubusercontent.com/59697786/126862160-1b3df6d8-6283-476b-8191-253aa58c0426.png)
+
+![Screenshot (140)](https://user-images.githubusercontent.com/59697786/126864383-2da2d5c5-a622-4cbf-8933-05715f8438e4.png)
