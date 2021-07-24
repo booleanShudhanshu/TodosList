@@ -1,6 +1,5 @@
-function time() {
+function time(a) {
     let currTime;
-    let a = new Date();
     if (a.getHours() >= 10) {
         currTime = a.getHours();
     } else {
@@ -16,34 +15,32 @@ function time() {
     } else {
         currTime = currTime + ":0" + a.getSeconds();
     }
-    const options = {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-    };
-
-    date = a.toLocaleDateString(undefined, options);
-    currTime = date + " - " + currTime;
     return currTime;
 }
 function getAndUpdate() {
     console.log("Updating List...");
     tit = document.getElementById("title").value;
     desc = document.getElementById("description").value;
-    date = time();
+    //Entry time
+    a = new Date();
+    currTime = time(a);
     const options = {
         weekday: "long",
         year: "numeric",
         month: "long",
         day: "numeric",
-        hour: "numeric"
-        
     };
+    date = a.toLocaleDateString(undefined, options);
+    date = date + " - " + currTime;
+
+    //Deadline
     deadline = document.getElementById('deadline').value;
     deadline = new Date(deadline);
+    deadlineTime = time(deadline);
     deadline = deadline.toLocaleDateString(undefined,options);
-    console.log(date);
+    deadline1 = deadline + " - " + deadlineTime;
+
+
     if (localStorage.getItem("itemsJson") == null) {
         itemJsonArray = [];
         itemJsonArray.push([tit, desc, date,deadline]);
